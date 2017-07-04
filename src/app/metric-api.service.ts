@@ -11,12 +11,28 @@ export class MetricApiService {
 
   getPrimaryDashData(): void {}
 
-  getLastOutageData(): void {}
+  getLastOutageData(): Promise<any> {
+    return this.http.get(this.baseUrl + '/last-run')
+      .toPromise()
+      .catch(this.handleError);
+  }
 
-  getDashboardLagData(): void {}
+  getHistoricalData(): Promise<any> {
+    return this.http.get(this.baseUrl + '/details')
+      .toPromise()
+      .catch(this.handleError);
+  }
 
-  getLastUpdated(): string {
-    return 'July 3, 2017 6:34pm';
+  getDashboardLagData(): Promise<any> {
+    return this.http.get(this.baseUrl + '/dash-lag-data')
+      .toPromise()
+      .catch(this.handleError);
+  }
+
+  getLastUpdated(): Promise<any> {
+    return this.http.get(this.baseUrl + '/last-run')
+      .toPromise()
+      .catch(this.handleError);
   }
 
   getActiveHotIssues(): Promise<any> {

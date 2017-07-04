@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MetricApiService} from '../metric-api.service';
 
 @Component({
   selector: 'app-historical',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./historical.component.css']
 })
 export class HistoricalComponent implements OnInit {
+  data: object;
 
-  constructor() { }
+  constructor(private metricService: MetricApiService) { }
 
   ngOnInit() {
+    this.metricService.getHistoricalData()
+      .then( response => this.data = response.json().details as object );
   }
 
+  getKeys(obj): string[] {
+    return Object.keys(obj);
+  }
 }

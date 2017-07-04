@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private metricService: MetricApiService) {}
 
   ngOnInit(): void {
-    this.lastUpdated = this.metricService.getLastUpdated();
+    this.metricService.getLastUpdated()
+      .then( response => this.lastUpdated  = response.json().lastRun.lastRun as string);
   }
 }

@@ -1,3 +1,25 @@
-<p>
-  historical works!
-</p>
+<div class="panel-heading">Monthly Report</div>
+<div class="panel-body">
+  <div class="table-responsive">
+    <table *ngIf="data" class="table table-hover table-condensed table-bordered">
+      <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let month of data.months">{{month}}</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let appKey of getKeys(data.apps)">
+      <tr>
+        <th>{{data.apps[appKey].name}}</th>
+        <th *ngFor="let month of data.months"></th>
+      </tr>
+      <tr *ngFor="let metricKey of getKeys(data.apps[appKey].metrics)">
+        <td>{{data.apps[appKey].metrics[metricKey].name}}</td>
+        <td *ngFor="let month of data.apps[appKey].metrics[metricKey].months">
+          {{month.value}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
