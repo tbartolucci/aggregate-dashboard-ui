@@ -1,1 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
+@CHARSET "ISO-8859-1";
+
+.bg-neutral {
+  background:#dddddd;
+  color:#777777;
+}
+
+table tr td.bg-danger{
+  font-weight:bold;
+  border: solid 3px red !important;
+  color: white;
+  background: darkred;
+}
+
+table.metrics{
+  max-width:1700px;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+div.lastoutage {
+  max-width:300px;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+div.lastoutage table tr th {
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+div.lastoutage table tr td{
+  text-align: center;
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+div.lastoutage table tr td div  {
+  text-align: left;
+  font-weight: normal;
+  font-size: 10pt;
+}
+
+div.lastoutage table tr td span  {
+  font-size: 40pt;
+}
+
+div.lastoutage table tr td span.notgood  {
+  color: black;
+}
+
+div.lastoutage table tr td span.better  {
+  color: orange;
+}
+
+div.lastoutage table tr td span.best  {
+  color: green;
+}
+
+table.lagmetrics {
+  max-width:700px;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+table.lagmetrics th.title {
+  text-align: center;
+}
+
+td.delete-column{
+  width:15%;
+  max-width:15%;
+}
+
+.internal {
+  padding:10px 0px;
+  color: red;
+  text-align: center;
+}
+
+.health-index tr:nth-of-type(2) {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size:100%;
+}
+
+/* Test One */
+
+body.tv .bg-success {
+  background:#AAF38D;
+}
+
+body.tv .score-hover .score-value{
+  opacity:1 !important;
+}
+
+
+
+/* Test Awesome */
+
+body.tv-dash .logo-panel {
+  background: rgba(255,255,255,0.3);
+  border-radius:15px;
+  padding:10px;
+  padding-right:20px;
+  text-align:center;
+  margin-top:15px;
+  color:black;
+}
+
+.logo-panel small{
+  color:black;
+}
+
+body.tv-dash {
+  background:#222222;
+  font-size:155%;
+}
+
+body.tv-dash .panel-default{
+  margin-top: 15px;
+}
+
+body.tv-dash .page-header,
+body.tv-dash .nav-tabs{
+  display:none;
+}

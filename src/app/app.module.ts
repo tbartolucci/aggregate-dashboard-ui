@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { PrimaryDashboardComponent } from './primary-dashboard/primary-dashboard.component';
@@ -9,6 +10,11 @@ import { HotIssuesComponent } from './hot-issues/hot-issues.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ActiveHotIssuesComponent } from './active-hot-issues/active-hot-issues.component';
 import { DashLagTableComponent } from './dash-lag-table/dash-lag-table.component';
+import { ReplicationLagComponent } from './replication-lag/replication-lag.component';
+
+import { AppRoutingModule } from './app-routing.module';
+
+import { MetricApiService } from './metric-api.service';
 
 @NgModule({
   declarations: [
@@ -19,12 +25,17 @@ import { DashLagTableComponent } from './dash-lag-table/dash-lag-table.component
     HotIssuesComponent,
     DashboardComponent,
     ActiveHotIssuesComponent,
-    DashLagTableComponent
+    DashLagTableComponent,
+    ReplicationLagComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    MetricApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

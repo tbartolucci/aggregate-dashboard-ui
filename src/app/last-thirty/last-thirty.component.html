@@ -1,3 +1,25 @@
-<p>
-  last-thirty works!
-</p>
+<div class="panel-heading">Last 30 days</div>
+<div class="panel-body">
+  <div class="table-responsive">
+    <table class="table table-condensed table-bordered" *ngIf="data">
+      <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let day of data.days">{{day}}</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let key of getKeys(data.apps)">
+      <tr>
+        <th>{{data.apps[key].name}}</th>
+        <th *ngFor="let day of data.days"></th>
+      </tr>
+      <tr *ngFor="let metricKey of getKeys(data.apps[key].metrics)">
+        <td>{{data.apps[key].metrics[metricKey].name}}</td>
+        <td *ngFor="let day of data.apps[key].metrics[metricKey].days">
+          {{day.value}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
