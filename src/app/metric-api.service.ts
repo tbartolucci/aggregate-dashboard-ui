@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
+import {LastOutage} from './dashboard/last-outage';
 
 @Injectable()
 export class MetricApiService {
@@ -12,8 +13,9 @@ export class MetricApiService {
   getPrimaryDashData(): void {}
 
   getLastOutageData(): Promise<any> {
-    return this.http.get(this.baseUrl + '/last-run')
+    return this.http.get(this.baseUrl + '/last-outage-days')
       .toPromise()
+      .then( response => response.json().lastOutageDays as LastOutage)
       .catch(this.handleError);
   }
 
@@ -34,6 +36,7 @@ export class MetricApiService {
   getLastUpdated(): Promise<any> {
     return this.http.get(this.baseUrl + '/last-run')
       .toPromise()
+      .then( response => response.json().lastRun.lastRun as string)
       .catch(this.handleError);
   }
 

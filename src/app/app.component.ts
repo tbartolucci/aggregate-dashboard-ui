@@ -14,6 +14,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.metricService.getLastUpdated()
-      .then( response => this.lastUpdated  = response.json().lastRun.lastRun as string);
+      .then( response => this.lastUpdated  = response);
   }
 }
