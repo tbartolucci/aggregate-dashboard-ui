@@ -1,3 +1,10 @@
-<p>
-
-</p>
+<table *ngIf="data" class="table table-hover table-condensed table-bordered metrics">
+  <tr>
+    <th></th>
+    <th *ngFor="let product of data.products">{{product.name}}</th>
+  </tr>
+  <tr *ngFor="let metricKey of forHelper.getKeys(data.metrics)">
+    <th>{{data.metrics[metricKey].key}}</th>
+    <td *ngFor="let m of data.metrics[metricKey].products" class="">{{m.value}}</td>
+  </tr>
+</table>

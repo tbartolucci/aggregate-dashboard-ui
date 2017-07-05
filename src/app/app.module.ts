@@ -15,6 +15,7 @@ import { ReplicationLagComponent } from './replication-lag/replication-lag.compo
 import { AppRoutingModule } from './app-routing.module';
 
 import { MetricApiService } from './metric-api.service';
+import { NgForHelper } from './ng-for-helper';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MetricApiService } from './metric-api.service';
     AppRoutingModule
   ],
   providers: [
-    MetricApiService
+    MetricApiService,
+    NgForHelper  // Legacy construct due to porting old API
   ],
   bootstrap: [AppComponent]
 })

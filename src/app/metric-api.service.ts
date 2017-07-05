@@ -10,7 +10,12 @@ export class MetricApiService {
 
   constructor(private http: Http) { }
 
-  getPrimaryDashData(): void {}
+  getPrimaryDashData(): Promise<object> {
+    return this.http.get(this.baseUrl + '/primary-dash-data')
+      .toPromise()
+      .then( response => response.json().dashboardData as object)
+      .catch(this.handleError);
+  }
 
   getLastOutageData(): Promise<LastOutage> {
     return this.http.get(this.baseUrl + '/last-outage-days')
