@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MetricApiService} from '../metric-api.service';
 
 @Component({
   selector: 'app-dash-lag-table',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashLagTableComponent implements OnInit {
 
-  constructor() { }
+  data: object;
+
+  constructor(private metricService: MetricApiService) { }
 
   ngOnInit() {
+    this.metricService.getDashboardLagData()
+      .then(response => this.data = response);
+  }
+
+  getKeys(obj): string[] {
+    return Object.keys(obj);
   }
 
 }

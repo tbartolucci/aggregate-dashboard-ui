@@ -12,7 +12,7 @@ export class MetricApiService {
 
   getPrimaryDashData(): void {}
 
-  getLastOutageData(): Promise<any> {
+  getLastOutageData(): Promise<LastOutage> {
     return this.http.get(this.baseUrl + '/last-outage-days')
       .toPromise()
       .then( response => response.json().lastOutageDays as LastOutage)
@@ -30,6 +30,13 @@ export class MetricApiService {
     return this.http.get(this.baseUrl + '/dash-lag-data')
       .toPromise()
       .then(response => response.json().lagMetrics as object)
+      .catch(this.handleError);
+  }
+
+  getReplicationLagData(): Promise<any> {
+    return this.http.get(this.baseUrl + '/replication')
+      .toPromise()
+      .then( response => response.json().replication as object)
       .catch(this.handleError);
   }
 

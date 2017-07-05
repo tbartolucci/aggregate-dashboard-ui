@@ -12,7 +12,7 @@ export class ReplicationLagComponent implements OnInit {
   constructor(private metricService: MetricApiService) { }
 
   ngOnInit() {
-    this.metricService.getDashboardLagData()
+    this.metricService.getReplicationLagData()
        .then(response => this.data = response);
   }
 
