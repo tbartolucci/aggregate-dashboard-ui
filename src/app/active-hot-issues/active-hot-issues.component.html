@@ -13,7 +13,7 @@
       <th>End Time</th>
       <th>Duration</th>
     </tr>
-    <tr *ngFor="let hiKey of getKeys(data)">
+    <tr *ngFor="let hiKey of forHelper.getKeys(data)">
       <td>{{data[hiKey].created}}</td>
       <td><a target="_blank"
              href="https://billtrust.atlassian.net/browse/{{data[hiKey].issueKey}}">{{data[hiKey].issueKey}}</a></td>

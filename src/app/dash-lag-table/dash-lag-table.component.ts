@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MetricApiService} from '../metric-api.service';
+import {NgForHelper} from '../ng-for-helper';
 
 @Component({
   selector: 'app-dash-lag-table',
@@ -10,15 +11,11 @@ export class DashLagTableComponent implements OnInit {
 
   data: object;
 
-  constructor(private metricService: MetricApiService) { }
+  constructor(private metricService: MetricApiService, private forHelper: NgForHelper) { }
 
   ngOnInit() {
     this.metricService.getDashboardLagData()
       .then(response => this.data = response);
-  }
-
-  getKeys(obj): string[] {
-    return Object.keys(obj);
   }
 
 }

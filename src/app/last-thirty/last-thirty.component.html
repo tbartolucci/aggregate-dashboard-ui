@@ -8,12 +8,12 @@
         <th *ngFor="let day of data.days">{{day}}</th>
       </tr>
       </thead>
-      <tbody *ngFor="let key of getKeys(data.apps)">
+      <tbody *ngFor="let key of forHelper.getKeys(data.apps)">
       <tr>
         <th>{{data.apps[key].name}}</th>
         <th *ngFor="let day of data.days"></th>
       </tr>
-      <tr *ngFor="let metricKey of getKeys(data.apps[key].metrics)">
+      <tr *ngFor="let metricKey of forHelper.getKeys(data.apps[key].metrics)">
         <td>{{data.apps[key].metrics[metricKey].name}}</td>
         <td *ngFor="let day of data.apps[key].metrics[metricKey].days">
           {{day.value}}

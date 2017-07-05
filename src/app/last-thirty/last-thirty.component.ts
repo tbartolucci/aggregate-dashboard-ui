@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MetricApiService } from '../metric-api.service';
+import {NgForHelper} from '../ng-for-helper';
 
 @Component({
   selector: 'app-last-thirty',
@@ -10,14 +11,10 @@ import { MetricApiService } from '../metric-api.service';
 export class LastThirtyComponent implements OnInit {
   data: object;
 
-  constructor(private metricService: MetricApiService) { }
+  constructor(private metricService: MetricApiService, private forHelper: NgForHelper) { }
 
   ngOnInit() {
     this.metricService.getLastThirtyDayData()
        .then(response => this.data = response);
-  }
-
-  getKeys(obj): string[] {
-    return Object.keys(obj);
   }
 }

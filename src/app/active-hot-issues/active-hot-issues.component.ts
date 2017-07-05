@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MetricApiService} from '../metric-api.service';
+import {NgForHelper} from '../ng-for-helper';
 
 @Component({
   selector: 'app-active-hot-issues',
@@ -9,14 +10,10 @@ import {MetricApiService} from '../metric-api.service';
 export class ActiveHotIssuesComponent implements OnInit {
   data: object;
 
-  constructor(private metricService: MetricApiService) { }
+  constructor(private metricService: MetricApiService, private forHelper: NgForHelper) { }
 
   ngOnInit() {
     this.metricService.getActiveHotIssues(true)
      .then(response => this.data = response);
-  }
-
-  getKeys(obj): string[] {
-    return Object.keys(obj);
   }
 }

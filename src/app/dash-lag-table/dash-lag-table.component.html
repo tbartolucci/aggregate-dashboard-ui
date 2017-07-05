@@ -8,7 +8,7 @@
     <th>Max</th>
     <th>Percent Over {{data.threshold}} seconds</th>
   </tr>
-  <tr *ngFor="let serverName of getKeys(data.servers)">
+  <tr *ngFor="let serverName of forHelper.getKeys(data.servers)">
     <td>{{data.servers[serverName].name}}</td>
     <td>{{data.servers[serverName].average}}</td>
     <td>{{data.servers[serverName].max}}</td>
