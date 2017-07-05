@@ -13,7 +13,7 @@ export class ReplicationLagComponent implements OnInit {
 
   ngOnInit() {
     this.metricService.getDashboardLagData()
-       .then(response => this.data = response.json().lagMetrics as object);
+       .then(response => this.data = response);
   }
 
   getKeys(obj): string[] {

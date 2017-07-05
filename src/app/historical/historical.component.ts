@@ -13,7 +13,7 @@ export class HistoricalComponent implements OnInit {
 
   ngOnInit() {
     this.metricService.getHistoricalData()
-      .then( response => this.data = response.json().details as object );
+      .then( data => this.data = data );
   }
 
   getKeys(obj): string[] {

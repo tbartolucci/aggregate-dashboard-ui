@@ -20,12 +20,14 @@ export class MetricApiService {
   getHistoricalData(): Promise<any> {
     return this.http.get(this.baseUrl + '/details')
       .toPromise()
+      .then( response => response.json().details as object )
       .catch(this.handleError);
   }
 
   getDashboardLagData(): Promise<any> {
     return this.http.get(this.baseUrl + '/dash-lag-data')
       .toPromise()
+      .then(response => response.json().lagMetrics as object)
       .catch(this.handleError);
   }
 
@@ -35,15 +37,18 @@ export class MetricApiService {
       .catch(this.handleError);
   }
 
-  getActiveHotIssues(): Promise<any> {
-    return this.http.get(this.baseUrl + '/hot-issues')
+  getActiveHotIssues(all): Promise<any> {
+    const url = all ? '/hot-issues' : '/active-hot-issues';
+    return this.http.get(this.baseUrl + url)
       .toPromise()
+      .then(response => response.json().hotIssues.hotIssues as object)
       .catch(this.handleError);
   }
 
   getLastThirtyDayData(): Promise<any> {
     return this.http.get(this.baseUrl + '/daily')
       .toPromise()
+      .then(response => response.json().daily as object)
       .catch(this.handleError);
   }
 

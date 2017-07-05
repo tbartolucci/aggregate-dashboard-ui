@@ -14,7 +14,7 @@ export class LastThirtyComponent implements OnInit {
 
   ngOnInit() {
     this.metricService.getLastThirtyDayData()
-       .then(response => this.data = response.json().daily as object);
+       .then(response => this.data = response);
   }
 
   getKeys(obj): string[] {

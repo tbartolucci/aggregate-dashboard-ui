@@ -12,8 +12,8 @@ export class ActiveHotIssuesComponent implements OnInit {
   constructor(private metricService: MetricApiService) { }
 
   ngOnInit() {
-    this.metricService.getActiveHotIssues()
-     .then(response => this.data = response.json().hotIssues.hotIssues as object);
+    this.metricService.getActiveHotIssues(true)
+     .then(response => this.data = response);
   }
 
   getKeys(obj): string[] {
