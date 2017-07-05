@@ -5,6 +5,6 @@
   </tr>
   <tr *ngFor="let metricKey of forHelper.getKeys(data.metrics)">
     <th>{{data.metrics[metricKey].key}}</th>
-    <td *ngFor="let m of data.metrics[metricKey].products" class="">{{m.value}}</td>
+    <td *ngFor="let m of data.metrics[metricKey].products" class="{{forHelper.getClass(m)}}">{{m.value}}</td>
   </tr>
 </table>

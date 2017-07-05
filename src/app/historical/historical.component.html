@@ -15,7 +15,7 @@
       </tr>
       <tr *ngFor="let metricKey of forHelper.getKeys(data.apps[appKey].metrics)">
         <td>{{data.apps[appKey].metrics[metricKey].name}}</td>
-        <td *ngFor="let month of data.apps[appKey].metrics[metricKey].months">
+        <td *ngFor="let month of data.apps[appKey].metrics[metricKey].months" class="{{forHelper.getClass(month)}}">
           {{month.value}}
         </td>
       </tr>

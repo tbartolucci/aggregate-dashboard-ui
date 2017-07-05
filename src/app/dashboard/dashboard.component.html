@@ -13,7 +13,7 @@
       </tr>
       <tr>
         <td *ngIf="lastOutage">
-          <span class="{{lastOutage.style}}">{{lastOutage.lastOutage}}</span>
+          <span class="{{getStyle()}}">{{lastOutage.lastOutage}}</span>
           <div>Triggered by: {{lastOutage.apps}}</div>
         </td>
       </tr>

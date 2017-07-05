@@ -15,7 +15,7 @@
       </tr>
       <tr *ngFor="let metricKey of forHelper.getKeys(data.servers[key].metrics)">
         <td>{{data.servers[key].metrics[metricKey].name}}</td>
-        <td *ngFor="let day of data.servers[key].metrics[metricKey].days">
+        <td *ngFor="let day of data.servers[key].metrics[metricKey].days" class="{{forHelper.getClass(day)}}">
           {{day.value}}
         </td>
       </tr>

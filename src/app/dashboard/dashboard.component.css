@@ -1,0 +1,38 @@
+div.lastoutage {
+  max-width:300px;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+div.lastoutage table tr th {
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+div.lastoutage table tr td{
+  text-align: center;
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+div.lastoutage table tr td div  {
+  text-align: left;
+  font-weight: normal;
+  font-size: 10pt;
+}
+
+div.lastoutage table tr td span  {
+  font-size: 40pt;
+}
+
+div.lastoutage table tr td span.notgood  {
+  color: black;
+}
+
+div.lastoutage table tr td span.better  {
+  color: orange;
+}
+
+div.lastoutage table tr td span.best  {
+  color: green;
+}
